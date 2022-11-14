@@ -47,13 +47,24 @@ createApp({
             if(this.activeImage < 0){
                 this.activeImage = 4;
             }
+            slides[this.activeImage].active = true;
+            slides[this.activeImage+1].active = false;
+            
         },
         nextImage() {
             this.activeImage++
             if(this.activeImage == 5){
                 this.activeImage = 0;
             }
+            slides[this.activeImage].active = true;
+            slides[this.activeImage-1].active = false;
         },
+        // addActive(index){
+        //     const activated = 'active'
+        //     if(slides[index].active){
+        //         return activeted;
+        //     }
+        // }
        
     },
 }).mount('#app')
